@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Football predictions</title>
+      <script src="jquery-3.1.0.min.js"></script>
+      <meta name="description" content="NFL predictions"/>
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <script src="Chart.js"></script>
+  </head>	
+  <body class="">
+    <div class="header">
+      <a href="index.html">Home</a>
+      <a href="week_1.html">Week 1</a>
+      <a href="players.html">Players Data</a>
+    </div>
+    <div class="content">
+      <center>
+        <div class="page_title">Playes Stat and Predictions</div>      
+        <div class="player_chart_block">
+          <canvas id="player1" width="200" height="200"></canvas>
+        </div>
+        <div class="player_text_block">
+          <div class="title">Carson Palmer #3 QB</div>
+          <div>Next season will be more hard for Palmer. He has 36 and this is main reason of some regress. Looks like he still has good chances for not bad season. But his records will more lows. At lasy season Palmer had 11 interceptions. This recond can increase to 15.</div>
+        </div>
+        <div class="clear_block" />
+      </center>
+      <script>
+        var data = {
+            labels: ["TDS", "INT", "YDS", "RTG", "Att", "Comp", "AVG", "G"],
+            datasets: [
+                {
+                    label: "Last Seasons Stats",
+                    backgroundColor: "rgba(179,181,198,0.2)",
+                    borderColor: "rgba(179,181,198,1)",
+                    pointBackgroundColor: "rgba(179,181,198,1)",
+                    pointBorderColor: "#fff",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(179,181,198,1)",
+                    data: [35, 11, 4671, 104.6, 537, 342, 8.7, 16]
+                },
+                {
+                    label: "Predicted Stats",
+                    backgroundColor: "rgba(255,99,132,0.2)",
+                    borderColor: "rgba(255,99,132,1)",
+                    pointBackgroundColor: "rgba(255,99,132,1)",
+                    pointBorderColor: "#fff",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(255,99,132,1)",
+                    data: [30, 15, 4500, 100, 520, 310, 8.0, 16]
+                }
+            ]
+        }; 
+
+        var ctx = document.getElementById("player1");
+        var myRadarChart = new Chart(ctx, {
+            type: "radar",
+            data: data,
+            options: {
+                    scale: {
+                        reverse: true,
+                        ticks: {
+                            beginAtZero: true
+                       }
+                    }
+            }
+        });
+
+        </script>
+
+    </div>
+    <div class="footer">
+    </div>
+  <body>
+</html>
+  
